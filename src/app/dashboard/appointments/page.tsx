@@ -1,0 +1,8 @@
+import type { Metadata } from "next";
+import { MyAppointments } from "@/components/dashboard/UserViews";
+
+export const metadata: Metadata = { title: "نوبت‌های من" };
+
+export default function Page() {
+  return <MyAppointments />;
+}

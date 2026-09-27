@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white font-sans text-navy-800 antialiased;
+    overflow-x: hidden;
+    font-feature-settings: "ss01";
+  }
+  h1, h2, h3, h4 {
+    @apply text-navy-900;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-400 ring-offset-2;
+  }
+  /* LTR islands (phone numbers, IDs, times) inside RTL layout */
+  .ltr {
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl px-5 py-2.5 text-sm font-semibold transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white hover:bg-brand-700;
+  }
+  .btn-navy {
+    @apply btn bg-navy-900 text-white hover:bg-navy-800;
+  }
+  .btn-outline {
+    @apply btn border border-navy-200 bg-white text-navy-800 hover:border-brand-300 hover:bg-brand-50;
+  }
+  .btn-ghost {
+    @apply btn text-navy-700 hover:bg-navy-50;
+  }
+  .btn-sm {
+    @apply px-3.5 py-2 text-xs;
+  }
+  .card {
+    @apply rounded-2xl border border-navy-100 bg-white shadow-card;
+  }
+  .input {
+    @apply w-full rounded-xl border border-navy-200 bg-white px-4 py-2.5 text-sm text-navy-900 placeholder:text-navy-300 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-100;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-navy-700;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium;
+  }
+  .section {
+    @apply py-16 sm:py-20;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold tracking-wide text-teal-600;
+  }
+}
+
+@layer utilities {
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
